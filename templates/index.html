@@ -13,6 +13,7 @@
   </header>
 
   <main>
+    {% if not show_text or not ocr_text %}
     <section class="upload-section">
       <form method="POST" enctype="multipart/form-data">
         <label for="pdf">📄 Upload your lab report (PDF):</label>
@@ -27,12 +28,6 @@
         <button type="submit">Analyze Report</button>
       </form>
     </section>
-
-    {% if not summary %}
-    <div class="processing">
-      <div class="loader"></div>
-      <p>Processing <strong>{{ filename }}</strong>... Extraction Complete.</p>
-    </div>
     {% endif %}
 
     {% if summary %}

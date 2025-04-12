@@ -21,13 +21,14 @@ def extract_text(pdf_path: str) -> str:
             text = image_to_string(img)
             all_text.append(text)
         result = "\n".join(all_text)
-        logger.info("✅ Tesseract OCR complete.")
+        logger.info("Tesseract OCR complete.")
         return result
 
     except Exception as e:
-        logger.error(f"❌ Tesseract OCR failed: {e}")
+        logger.error(f"Tesseract OCR failed: {e}")
         raise e
 
+#to be done
 def extract_text_from_image(image_path: str) -> str:
     """
     Uses PaddleOCR to extract text from an image file.

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="5">
+  <title>ClinIQ – Processing...</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="brand">Clin<span>IQ</span></div>
+    <p class="tagline">Analyzing your lab report…</p>
+  </header>
+
+  <main>
+    <div class="processing">
+      <div class="loader"></div>
+      <p><strong>{{ message }}</strong></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>ClinIQ &copy; 2025</p>
+  </footer>
+</body>
+</html>

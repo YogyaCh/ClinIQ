@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ClinIQ – Error</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .error-box {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 600px;
+      background-color: #ffe6e6;
+      border-left: 4px solid #d32f2f;
+      color: #b00020;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Clin<span>IQ</span></div>
+    <p class="tagline">Something went wrong</p>
+  </header>
+
+  <main>
+    <div class="error-box">
+      <h3>❌ Error</h3>
+      <pre>{{ message }}</pre>
+    </div>
+  </main>
+
+  <footer>
+    <p>ClinIQ &copy; 2025</p>
+  </footer>
+</body>
+</html>
