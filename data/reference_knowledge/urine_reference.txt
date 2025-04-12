@@ -1,0 +1,21 @@
+Urine Color: Normal urine is pale yellow. Dark or cloudy urine can indicate dehydration, infection, or liver issues.
+
+Specific Gravity: Measures urine concentration. Normal: 1.005–1.030. Low values suggest overhydration or kidney dysfunction. High values can indicate dehydration or excess protein/sugar.
+
+pH: Normal urine pH is 4.5–8.0. Acidic urine may indicate diabetes or starvation. Alkaline urine may result from UTIs or certain diets.
+
+Protein: Normal urine has little to no protein. Presence of protein (proteinuria) may signal kidney damage, diabetes, or hypertension.
+
+Glucose: Glucose is usually absent. Presence (glycosuria) often indicates uncontrolled diabetes mellitus.
+
+Ketones: Absent in healthy individuals. Found in starvation, keto diet, or diabetic ketoacidosis.
+
+Leukocyte Esterase: Indicates presence of white blood cells (WBCs). Positive results suggest urinary tract infections (UTIs).
+
+Nitrites: Positive nitrites indicate bacteria converting nitrates, suggesting infection.
+
+Bilirubin: Usually absent. Presence may suggest liver disease or bile duct obstruction.
+
+Urobilinogen: Normal range: 0.2–1.0 mg/dL. High levels may indicate liver dysfunction or hemolytic anemia.
+
+Microscopy: Looks for red blood cells (RBCs), WBCs, epithelial cells, crystals, and bacteria. Abnormal findings can indicate infections, kidney disease, or kidney stones.

@@ -1,0 +1,4 @@
+tesseract_path: "/Users/yogyach/anaconda3/envs/cliniq-env/bin/tesseract"
+llm_model: "llama3"
+chroma_db_dir: "data/chroma_db"
+reference_knowledge_dir: "data/reference_knowledge"

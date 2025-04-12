@@ -1,0 +1,30 @@
+name: cliniq
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - redis
+  - tesseract
+  - tesseract-ocr  
+  - pip:
+      - flask
+      - gunicorn
+      - pytesseract       
+      - langchain
+      - langchain-community
+      - langchain-core
+      - chromadb
+      - openai
+      - paddleocr
+      - pdf2image
+      - tiktoken
+      - sentence-transformers
+      - python-dotenv
+      - requests
+      - bert-score
+      - rapidfuzz
+      - PyMuPDF
+      - celery             
+      - redis              

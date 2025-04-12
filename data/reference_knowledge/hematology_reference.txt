@@ -1,0 +1,15 @@
+Hemoglobin (Hb) is a protein in red blood cells that carries oxygen. Normal levels are 13.8–17.2 g/dL for men and 12.1–15.1 g/dL for women. Low levels can indicate anemia, blood loss, or bone marrow disorders.
+
+White Blood Cell (WBC) count measures immune cells. Normal range: 4,000–11,000 cells/μL. Elevated levels may indicate infection, inflammation, or leukemia. Low levels may result from bone marrow suppression or viral infections.
+
+Platelet count assesses clotting ability. Normal: 150,000–450,000 per μL. High values suggest clotting disorders or inflammation. Low values may lead to bleeding issues.
+
+Hematocrit (Hct) reflects the proportion of red blood cells in the blood. Normal range: ~40–50% in men, ~35–45% in women. Low hematocrit is associated with anemia.
+
+MCV (Mean Corpuscular Volume) describes red blood cell size. Normal: 80–100 fL. High MCV = macrocytic anemia; Low MCV = microcytic anemia.
+
+RDW (Red Cell Distribution Width) indicates variation in RBC size. Normal: 11.5–14.5%. Elevated RDW may indicate nutrient deficiencies.
+
+Neutrophils, lymphocytes, monocytes, eosinophils, and basophils are WBC subtypes used to detect infections, allergies, and immune conditions.
+
+Reticulocyte count reflects new RBC production. High levels may indicate active blood loss or recovery from anemia.

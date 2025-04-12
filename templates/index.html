@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClinIQ – Lab Report Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="brand">Clin<span>IQ</span></div>
+    <p class="tagline">A GenAI-powered medical assistant for lab report interpretation</p>
+  </header>
+
+  <main>
+    <section class="upload-section">
+      <form method="POST" enctype="multipart/form-data">
+        <label for="pdf">📄 Upload your lab report (PDF):</label>
+        <input type="file" name="pdf" id="pdf" required>
+        
+        <div class="options">
+          <label>
+            <input type="checkbox" name="show_text"> Show Extracted Report Text
+          </label>
+        </div>
+
+        <button type="submit">Analyze Report</button>
+      </form>
+    </section>
+
+    {% if not summary %}
+    <div class="processing">
+      <div class="loader"></div>
+      <p>Processing <strong>{{ filename }}</strong>... Extraction Complete.</p>
+    </div>
+    {% endif %}
+
+    {% if summary %}
+    <section class="output">
+      <h2>📋 AI-Generated Summary</h2>
+      <div class="card">{{ summary }}</div>
+    </section>
+    {% endif %}
+
+    {% if show_text and ocr_text %}
+    <section class="output">
+      <h2>📄 Extracted Text</h2>
+      <textarea readonly class="extracted">{{ ocr_text }}</textarea>
+    </section>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>ClinIQ &copy; 2025</p>
+  </footer>
+</body>
+</html>

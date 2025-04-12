@@ -1,0 +1,34 @@
+services:
+  cliniq_app:
+    build: .
+    container_name: cliniq_flask
+    working_dir: /app
+    ports:
+      - "5050:8000"
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    environment:
+      - FLASK_ENV=production
+    command: >
+      bash -c "mkdir -p logs && gunicorn app:app -w 4 -b 0.0.0.0:8000 --access-logfile logs/gunicorn-access.log --error-logfile logs/gunicorn-error.log"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: cliniq_redis
+    ports:
+      - "6379:6379"
+
+  celery_worker:
+    build: .
+    container_name: cliniq_celery
+    working_dir: /app
+    volumes:
+      - ./logs:/app/logs
+    command: >
+      bash -c "mkdir -p logs && celery -A celery_worker worker --loglevel=info > logs/celery.log 2>&1"
+    depends_on:
+      - redis
+      - cliniq_app
