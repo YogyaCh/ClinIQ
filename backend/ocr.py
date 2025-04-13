@@ -8,11 +8,11 @@ from logger import get_logger, log_timing
 logger = get_logger()
 
 @log_timing
-def extract_text(pdf_path: str) -> str:
+def extract_text(pdf_path: str, task_id="") -> str:
     """
     Extract text from PDF using pytesseract (Tesseract OCR).
     """
-    logger.info(f"📄 Starting Tesseract OCR on: {pdf_path}")
+    logger.info(f"[{task_id}] Starting Tesseract OCR on: {pdf_path}")
 
     try:
         images = convert_from_path(pdf_path, dpi=300)
@@ -21,11 +21,11 @@ def extract_text(pdf_path: str) -> str:
             text = image_to_string(img)
             all_text.append(text)
         result = "\n".join(all_text)
-        logger.info("Tesseract OCR complete.")
+        logger.info(f"[{task_id}] Tesseract OCR complete.")
         return result
 
     except Exception as e:
-        logger.error(f"Tesseract OCR failed: {e}")
+        logger.error(f"[{task_id}] Tesseract OCR failed: {e}")
         raise e
 
 #to be done

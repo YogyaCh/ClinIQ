@@ -31,7 +31,7 @@ def index():
 @log_timing
 def result(task_id):
     task: AsyncResult = run_pipeline.AsyncResult(task_id)
-    logger.info(f"Checking status for task: {task_id}")
+    logger.debug(f"Checking status for task: {task_id}")
 
     if task.state == 'PENDING':
         return render_template("loading.html", message="Task queued. Please wait...")
@@ -52,6 +52,10 @@ def result(task_id):
     logger.warning(f"Unexpected task state: {task.state}")
     return "Unexpected state."
 
+
+
+
+#ToDo
 @app.route('/health')
 def health():
     logger.info("Health check OK")

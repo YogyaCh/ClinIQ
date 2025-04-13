@@ -29,7 +29,7 @@ def ingest_knowledgebase():
                 documents.extend(loader.load())
                 loaded_files.append(filename)
 
-        logger.info(f"📚 Loaded {len(loaded_files)} files: {loaded_files}")
+        logger.info(f"Loaded {len(loaded_files)} files: {loaded_files}")
 
         splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
         chunks = splitter.split_documents(documents)
@@ -42,31 +42,31 @@ def ingest_knowledgebase():
             persist_directory=DB_DIR
         )
         vectordb.persist()
-        logger.info("✅ ChromaDB updated and persisted.")
+        logger.info(" ChromaDB updated and persisted.")
         return vectordb
 
     except Exception as e:
-        logger.error(f"❌ Error during knowledgebase ingestion: {e}")
+        logger.error(f" Error during knowledgebase ingestion: {e}")
         raise e
 
 @log_timing
-def get_contextual_knowledge(query: str, k: int = 3) -> str:
+def get_contextual_knowledge(query: str, k: int = 3, task_id="") -> str:
     """
     Returns the top-k relevant chunks of knowledge based on a user query.
     Logs query, retrieved results, and failures.
     """
     try:
-        logger.info(f"🔎 Query: '{query}' (top {k})")
+        logger.info(f"[{task_id}] Query: '{query}' (top {k})")
         vectordb = Chroma(
             embedding_function=EMBEDDING_MODEL,
             persist_directory=DB_DIR
         )
         retriever = vectordb.as_retriever(search_kwargs={"k": k})
         docs = retriever.get_relevant_documents(query)
-        logger.info(f"📄 Retrieved {len(docs)} documents for query.")
+        logger.info(f"[{task_id}] Retrieved {len(docs)} documents for query.")
         context = "\n".join([doc.page_content for doc in docs])
         return context
 
     except Exception as e:
-        logger.error(f"❌ Retrieval failed for query '{query}': {e}")
+        logger.error(f"[{task_id}] Retrieval failed for query '{query}': {e}")
         raise e
