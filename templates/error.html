@@ -25,6 +25,12 @@
     <div class="error-box">
       <h3>❌ Error</h3>
       <pre>{{ message }}</pre>
+      {% if show_text %}
+      <br>
+      <a href="{{ url_for('index') }}">
+          <button type="button">Analyze Another Report</button>
+      </a>
+      {% endif %}
     </div>
   </main>
 

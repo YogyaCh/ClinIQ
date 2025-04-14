@@ -43,6 +43,13 @@
       <textarea readonly class="extracted">{{ ocr_text }}</textarea>
     </section>
     {% endif %}
+
+    {% if show_text %}
+      <br>
+      <a href="{{ url_for('index') }}">
+          <button type="button">Analyze Another Report</button>
+      </a>
+    {% endif %}
   </main>
 
   <footer>
