@@ -28,6 +28,12 @@ ClinIQ/
 ├── requirements.txt       # Python packages
 └── README.md              # This file
 ```
+---
+## To Do:
+
+P0 - Evaluation and Monitoring
+P1 - Tests
+P2 - Add confidence levels or flags (green/yellow/red) to indicate summary quality based on extracted text and context.
 
 ---
 
