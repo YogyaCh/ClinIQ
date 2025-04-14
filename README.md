@@ -2,11 +2,11 @@
 # ClinIQ – GenAI-Powered Medical Lab Report Analyzer
 
 ClinIQ is a full-stack, production-ready GenAI application that:
-- 🧾 Extracts text from scanned PDF lab reports (CBC, Hematology, Urine, etc.)
-- 🧠 Retrieves contextual medical knowledge from a custom ChromaDB vector store
-- 🧬 Generates intelligent summaries using local LLaMA-based models via [Ollama](https://ollama.com/)
-- ✅ Supports concurrent users with Celery + Redis task queue
-- 🧪 Includes test cases, monitoring logs, and evaluation utilities
+- Extracts text from scanned PDF lab reports (CBC, Hematology, Urine, etc.)
+- Retrieves contextual medical knowledge from a custom ChromaDB vector store
+- Generates intelligent summaries using local LLaMA-based models via [Ollama](https://ollama.com/)
+- Supports concurrent users with Celery + Redis task queue
+-  Includes test cases, monitoring logs, and evaluation utilities
 
 ---
 
@@ -108,12 +108,12 @@ This starts:
 - Celery worker (`cliniq_celery`)
 - Redis queue (`cliniq_redis`)
 
-> ✅ Make sure [Ollama](https://ollama.com) is running on your host:  
+> Make sure [Ollama](https://ollama.com) is running on your host:  
 ```bash
 ollama run llama3
 ```
 
-> 🔁 Update `api/local_llm.py` to:
+> Update `api/local_llm.py` to:
 ```python
 OLLAMA_API_URL = "http://host.docker.internal:11434/api/generate"
 ```
@@ -135,20 +135,20 @@ You’ll find:
 
 ---
 
-## 🛠 Features
+## Features
 
 | Feature                  | Description |
 |--------------------------|-------------|
-| 📄 OCR                   | Extracts text from PDFs using Tesseract |
-| 🧠 LLM Summarization     | Uses local LLaMA (via Ollama) |
-| 📚 Retrieval             | Contextual vector DB from medical knowledge |
-| ⚙️ Async Tasks           | Celery + Redis for concurrency |
-| 🧪 Monitoring            | Logs performance and failures |
-| 📦 Dockerized            | Runs all services together in production |
+| OCR                   | Extracts text from PDFs using Tesseract |
+| LLM Summarization     | Uses local LLaMA (via Ollama) |
+| Retrieval             | Contextual vector DB from medical knowledge |
+| Async Tasks           | Celery + Redis for concurrency |
+| Monitoring            | Logs performance and failures |
+| Dockerized            | Runs all services together in production |
 
 ---
 
-## 📌 Requirements
+## Requirements
 
 - Python 3.10+
 - Redis
