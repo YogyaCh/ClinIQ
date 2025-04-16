@@ -50,7 +50,7 @@ def ingest_knowledgebase():
         raise e
 
 @log_timing
-def get_contextual_knowledge(query: str, k: int = 3, task_id="") -> str:
+def get_contextual_knowledge(query: str, k: int = 1, task_id="") -> str:
     """
     Returns the top-k relevant chunks of knowledge based on a user query.
     Logs query, retrieved results, and failures.

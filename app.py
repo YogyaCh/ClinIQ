@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from celery.result import AsyncResult
 from celery_worker import run_pipeline
 from logger import get_logger, log_timing
+from utils.utils import is_pdf_empty
+
 import os
 
 logger = get_logger()
@@ -20,6 +22,10 @@ def index():
             file.save(file_path)
 
             logger.info(f"Received file upload: {filename}")
+            if is_pdf_empty(file_path):
+                logger.warning(f"Empty or unreadable PDF uploaded: {file_path}")
+                return render_template("error.html", error_message="The uploaded PDF is empty or unreadable. Please check the file and try again.")
+
 
             task = run_pipeline.delay(file_path)
             logger.info(f"Task {task.id} submitted for file {filename}")

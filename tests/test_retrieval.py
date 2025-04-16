@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch, MagicMock
 import os
 
-# Patch Chroma, HuggingFaceEmbeddings, TextLoader, and CharacterTextSplitter
+
 @patch("backend.vector.ingest_knowledgebase.os.listdir")
 @patch("backend.vector.ingest_knowledgebase.TextLoader")
 @patch("backend.vector.ingest_knowledgebase.CharacterTextSplitter")

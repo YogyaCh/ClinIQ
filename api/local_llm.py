@@ -18,7 +18,7 @@ def query_ollama(prompt: str, model: str = "llama3") -> str:
 
     try:
         start = time.time()
-        response = requests.post(OLLAMA_API_URL, json=payload, timeout=90)
+        response = requests.post(OLLAMA_API_URL, json=payload, timeout=120)
         response.raise_for_status()
         result = response.json()["response"].strip()
         logger.info(f"Ollama responded in {time.time() - start:.2f}s")

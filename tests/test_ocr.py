@@ -14,6 +14,12 @@ def test_extract_text_returns_str():
     assert isinstance(text, str)
     assert len(text.strip()) > 0, "OCR returned empty string"
 
+def test_extract_text_from_sample_pdf():
+    if not os.path.exists(TEST_PDF_PATH):
+        pytest.skip("Test PDF not found.")
+    result = extract_text(TEST_PDF_PATH)
+    assert "Hemoglobin" in result
+
 @patch("backend.ocr.convert_from_path")
 @patch("backend.ocr.image_to_string")
 def test_extract_text_success(mock_image_to_string, mock_convert_from_path):

@@ -24,13 +24,11 @@
   <main>
     <div class="error-box">
       <h3>❌ Error</h3>
-      <pre>{{ message }}</pre>
-      {% if show_text %}
+      <pre>{{ error_message }}</pre>
       <br>
       <a href="{{ url_for('index') }}">
-          <button type="button">Analyze Another Report</button>
+          <button type="button">Try Analyzing Another Report</button>
       </a>
-      {% endif %}
     </div>
   </main>
 
