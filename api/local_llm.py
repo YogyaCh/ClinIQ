@@ -26,7 +26,7 @@ def query_ollama(prompt: str, model: str = "llama3") -> str:
 
     except requests.exceptions.RequestException as e:
         logger.error(f"Ollama API call failed: {e}")
-        return "⚠️ Error: Could not generate response from local model."
+        return " Error: Could not generate response from local model."
 
 # Generate Summary Prompt
 def generate_summary_response(report_text: str, knowledge: str, model: str = "llama3") -> str:

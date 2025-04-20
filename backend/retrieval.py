@@ -34,7 +34,7 @@ def ingest_knowledgebase():
         splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
         chunks = splitter.split_documents(documents)
 
-        logger.info(f"🔍 Total chunks created: {len(chunks)}")
+        logger.info(f" Total chunks created: {len(chunks)}")
 
         vectordb = Chroma.from_documents(
             documents=chunks,
