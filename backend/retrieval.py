@@ -1,7 +1,7 @@
 import os
 from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders import TextLoader
-from langchain_text_splitters import CharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from logger import get_logger, log_timing
@@ -31,7 +31,11 @@ def ingest_knowledgebase():
 
         logger.info(f"Loaded {len(loaded_files)} files: {loaded_files}")
 
-        splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=300,
+            chunk_overlap=50,
+            separators=["\n\n", "\n", ".", " ", ""]
+        )
         chunks = splitter.split_documents(documents)
 
         logger.info(f" Total chunks created: {len(chunks)}")
@@ -50,7 +54,7 @@ def ingest_knowledgebase():
         raise e
 
 @log_timing
-def get_contextual_knowledge(query: str, k: int = 1, task_id="") -> str:
+def get_contextual_knowledge(query: str, k: int = 3, task_id="") -> str:
     """
     Returns the top-k relevant chunks of knowledge based on a user query.
     Logs query, retrieved results, and failures.
